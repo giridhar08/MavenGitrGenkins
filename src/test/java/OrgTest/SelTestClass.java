@@ -11,9 +11,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.internal.annotations.ITest;
 
 import com.aventstack.extentreports.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
@@ -30,6 +35,7 @@ public class SelTestClass {
 	ExtentHtmlReporter reporter = new ExtentHtmlReporter("C:\\Users\\giridhar\\workspace8\\DemoProj\\test-output\\ExtentReports\\report.html");
 	ExtentReports extent = new ExtentReports();
 	ChromeOptions chromeOptions = new ChromeOptions();
+	 ExtentTest logger;
     
 	@BeforeClass
 	public void setUp(){
@@ -49,7 +55,7 @@ public class SelTestClass {
 		
 		
 		extent.attachReporter(reporter);	
-	    ExtentTest logger = extent.createTest("testA"); 
+	    logger = extent.createTest("testA"); 
 	    
 	     
 	    driver.get("http://www.google.com");
@@ -57,8 +63,7 @@ public class SelTestClass {
 	   logger.log(Status.INFO, "login GMAIL info");
 	   logger.log(Status.PASS, "login pass");
 		//testing the files in the 
-		
-	   extent.flush();
+	
 		//new line added
 		//another line added
 		//another line added to test jenkins
@@ -77,12 +82,11 @@ public class SelTestClass {
 	    driver.get("http://www.yahoo.com");
 	    
 	   logger.log(Status.INFO, "login YAHOO info");
-	   logger.log(Status.PASS, "login pass");
+	   //logger.log(Status.PASS, "login pass");
 		//testing the files in the 
 	   
-	     logger.addScreenCaptureFromPath(SelTestClass.getScreenshot());
-		
-	   extent.flush();
+	    Assert.assertTrue(false);
+	  
 		//new line added
 		//another line added
 		//another line added to test jenkins
@@ -90,7 +94,25 @@ public class SelTestClass {
 		
 	}
 	
+	@AfterMethod
+	public void getTestResult(ITestResult result) throws IOException{
+		
+		if(result.getStatus() == ITestResult.FAILURE){
+			
+			logger.log(Status.FAIL,"failed");
+			logger.addScreenCaptureFromPath(SelTestClass.getScreenshot());
+		}
+		
+	}
 	
+	@AfterTest
+	public void closeExtentReport(){
+		
+		 extent.flush();
+	}
+	
+	
+
 	public static String  getScreenshot() throws IOException{
 		
 		TakesScreenshot src = (TakesScreenshot)driver;
