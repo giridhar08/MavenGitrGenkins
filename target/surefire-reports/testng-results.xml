@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="56292" started-at="2019-03-02T04:03:47Z" finished-at="2019-03-02T04:04:43Z">
+  <suite name="Suite" duration-ms="54360" started-at="2019-03-02T10:22:26Z" finished-at="2019-03-02T10:23:20Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="56292" started-at="2019-03-02T04:03:47Z" finished-at="2019-03-02T04:04:43Z">
+    <test name="Test" duration-ms="54360" started-at="2019-03-02T10:22:26Z" finished-at="2019-03-02T10:23:20Z">
       <class name="OrgTest.SelTestClass">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:OrgTest.SelTestClass@4f787b]" name="setUp" is-config="true" duration-ms="7074" started-at="2019-03-02T09:33:47Z" finished-at="2019-03-02T09:33:54Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:OrgTest.SelTestClass@17cd7a0]" name="setUp" is-config="true" duration-ms="7150" started-at="2019-03-02T15:52:26Z" finished-at="2019-03-02T15:52:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testA()[pri:0, instance:OrgTest.SelTestClass@4f787b]" name="testA" duration-ms="5302" started-at="2019-03-02T09:33:54Z" finished-at="2019-03-02T09:33:59Z">
+        <test-method status="PASS" signature="testA()[pri:0, instance:OrgTest.SelTestClass@17cd7a0]" name="testA" duration-ms="5820" started-at="2019-03-02T15:52:33Z" finished-at="2019-03-02T15:52:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testA -->
-        <test-method status="PASS" signature="testB()[pri:0, instance:OrgTest.SelTestClass@4f787b]" name="testB" duration-ms="41789" started-at="2019-03-02T09:33:59Z" finished-at="2019-03-02T09:34:41Z">
+        <test-method status="PASS" signature="testB()[pri:0, instance:OrgTest.SelTestClass@17cd7a0]" name="testB" duration-ms="39497" started-at="2019-03-02T15:52:39Z" finished-at="2019-03-02T15:53:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testB -->
-        <test-method status="PASS" signature="testDown()[pri:0, instance:OrgTest.SelTestClass@4f787b]" name="testDown" is-config="true" duration-ms="2113" started-at="2019-03-02T09:34:41Z" finished-at="2019-03-02T09:34:43Z">
+        <test-method status="PASS" signature="testDown()[pri:0, instance:OrgTest.SelTestClass@17cd7a0]" name="testDown" is-config="true" duration-ms="1872" started-at="2019-03-02T15:53:18Z" finished-at="2019-03-02T15:53:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDown -->
