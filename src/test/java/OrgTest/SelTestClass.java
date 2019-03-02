@@ -18,7 +18,7 @@ public class SelTestClass {
 	
 	ExtentHtmlReporter reporter = new ExtentHtmlReporter("C:\\Users\\giridhar\\workspace8\\DemoProj\\test-output\\ExtentReports\\report.html");
 	ExtentReports extent = new ExtentReports();
-	ChromeOptions options;
+	ChromeOptions chromeOptions = new ChromeOptions();
     
 	@BeforeClass
 	public void setUp(){
@@ -26,8 +26,8 @@ public class SelTestClass {
 		String driverPath = "C:\\Users\\giridhar\\workspace4\\SeleniumTest\\DriverServer\\Chrome\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		org.openqa.selenium.chrome.ChromeOptions chromeOptions = new ChromeOptions();
-		options.addArguments("--start-maximized"); 
-		driver = new ChromeDriver(options);
+		chromeOptions.addArguments("--start-maximized"); 
+		driver = new ChromeDriver(chromeOptions);
 		 //driver.manage().window().maximize();
 		
 	}
