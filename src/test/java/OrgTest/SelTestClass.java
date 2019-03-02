@@ -2,6 +2,7 @@ package OrgTest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,14 +18,16 @@ public class SelTestClass {
 	
 	ExtentHtmlReporter reporter = new ExtentHtmlReporter("C:\\Users\\giridhar\\workspace8\\DemoProj\\test-output\\ExtentReports\\report.html");
 	ExtentReports extent = new ExtentReports();
-    
+	ChromeOptions options;
     
 	@BeforeClass
 	public void setUp(){
 		
 		String driverPath = "C:\\Users\\giridhar\\workspace4\\SeleniumTest\\DriverServer\\Chrome\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", driverPath);
-		 driver = new ChromeDriver();
+		org.openqa.selenium.chrome.ChromeOptions chromeOptions = new ChromeOptions();
+		options.addArguments("--start-maximized"); 
+		driver = new ChromeDriver(options);
 		 //driver.manage().window().maximize();
 		
 	}
