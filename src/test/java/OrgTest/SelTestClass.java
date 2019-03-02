@@ -25,7 +25,7 @@ public class SelTestClass {
 		String driverPath = "C:\\Users\\giridhar\\workspace4\\SeleniumTest\\DriverServer\\Chrome\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		 driver = new ChromeDriver();
-		 driver.manage().window().maximize();
+		 //driver.manage().window().maximize();
 		
 	}
 	
